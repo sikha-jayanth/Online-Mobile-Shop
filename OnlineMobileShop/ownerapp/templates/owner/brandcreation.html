@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% extends 'owner/base.html'%}
+{% block body_block %}
+
+<body style="background-color:#1BA098;">
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+
+        </div>
+        <div class="col-4">
+
+            <form method="post" class="jumbotron" style="margin-top:5%;">{% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Add Brand" class="btn btn-primary btn-lg">
+
+
+            </form>
+        </div>
+        <div class="col-4">
+
+        </div>
+    </div>
+    <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+
+            <th scope="col">Brand name</th>
+            <th scope="col" colspan="2">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {%for brand in brands%}
+        <tr>
+
+            <td>{{brand.brand_name}}</td>
+
+            <td><a href="{% url 'updatebrand' brand.id%}" class="btn btn-outline-success">update</a></td>
+            <td><a href="{% url 'deletebrand' brand.id%}" class="btn btn-outline-danger">delete</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+{% endblock %}

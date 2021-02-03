@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'users/base.html' %}
+{% block body_block %}
+
+<body style="background-color:#c3839e">
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+
+        </div>
+        <div class="col-4">
+
+            <form method="post" class="jumbotron" style="margin-top:5%;">{% csrf_token %}
+                <h2>Enter order details</h2>
+                <br>
+                {{form.as_p}}
+                <input type="submit" value="Buy" class="btn btn-success btn-lg btn-block">
+            </form>
+
+        </div>
+        <div class="col-4">
+
+        </div>
+    </div>
+</div>
+
+</body>
+{% endblock %}

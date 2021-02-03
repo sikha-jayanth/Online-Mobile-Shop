@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends 'users/base.html'%}
+{% block body_block %}
+
+<body style="background-color:#957DAD;">
+<div class="container">
+    <div class="row">
+
+        <div class="col-4">
+
+        </div>
+        <div class="col-4">
+
+
+
+            <!--                </table>-->
+            <div class="card" style="width: 18rem;margin-top:10%;">
+                <div class="card-body">
+                    <h2 class="card-title">{{order.mobile}}</h2>
+
+                    <p class="card-text"> <table class="table">
+
+                                 <tr class="table-active">
+                                    <th scope="col">Quantity</th><td>{{order.quantity}}</td>
+                                </tr>
+                                 <tr class="table-active">
+                                    <th scope="col">Address</th><td>{{order.address}}</td>
+                                </tr>
+                                 <tr class="table-active">
+                                    <th scope="col">Status</th><td>{{order.status}}</td>
+                                </tr></p>
+
+
+                </div>
+            </div>
+            <div class="col-4">
+
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+{% endblock %}

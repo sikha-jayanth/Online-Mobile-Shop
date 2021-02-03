@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% extends 'owner/base.html'%}
+{% block body_block %}
+
+<body style="background-image: linear-gradient(to right,#314755,#26a0da);">
+
+<div class="card mb-3" style="max-width:85%;margin-left:6%;margin-top:2%">
+    <div class="row no-gutters">
+        <div class="col-md-6">
+            <img src="{{mobile.image.url}}" class="card-img-top" alt="...">
+        </div>
+        <div class="col-md-6">
+            <div class="card-body">
+                <h1 class="card-title">Device specifications</h1><br>
+                <p class="card-text">
+                <table class="table">
+                    <tr>
+                        <th scope="row">Mobile name</th>
+                        <td>{{mobile.mobile_name}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Brand</th>
+                        <td>{{mobile.Mobile_brand}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">RAM</th>
+                        <td>{{mobile.ram}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Internal storage</th>
+                        <td>{{mobile.internal_storage}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Colour</th>
+                        <td>{{mobile.color}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Screen size</th>
+                        <td>{{mobile.screen_size}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Processor</th>
+                        <td> {{mobile.processor}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Price</th>
+                        <td>{{mobile.price}}</td>
+                    </tr>
+
+                </table>
+
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+{% endblock %}

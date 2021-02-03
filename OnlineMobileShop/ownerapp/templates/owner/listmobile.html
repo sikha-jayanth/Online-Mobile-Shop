@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% extends 'owner/base.html'%}
+{% load static %}
+
+
+
+
+
+{% block body_block %}
+
+<link rel="stylesheet" href="{%static 'css/home.css'%}">
+<body>
+
+<div class="card-deck">
+
+    {% for mobile in mobiles %}
+    <div class="row" style="margin-top:3%;margin-left:0.5%">
+        <div class="col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{mobile.image.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{mobile.mobile_name}}</h5>
+                    <p class="card-text">Price:{{mobile.price}}</p>
+                </div>
+                <div class="card-body">
+                    <table>
+                        <tr>
+                            <td><a href="{% url 'viewmobile' mobile.id%}" class="card-link btn btn-primary">View</a>
+                            </td>
+                            <td><a href="{% url 'updatemobile' mobile.id%}" class="card-link btn btn-success">Update</a>
+                            </td>
+                            <td><a href="{% url 'deletemobile' mobile.id%}" class="card-link btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+
+</body>
+
+{% endblock %}
